@@ -16,3 +16,19 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:api')->	get('/test', function(){
+    return response()->json([
+        'user'  => [
+            'first_name'  => 'Swapnil',
+            'last_name'   => 'Chaudhari'
+        ]
+    ]);
+});
+
+Route::middleware('auth:api')->	get('/currentUser', function(){
+	$currentUser = app('Illuminate\Contracts\Auth\Guard')->user();
+    return response()->json([
+        'user'  => $currentUser
+    ]);
+});

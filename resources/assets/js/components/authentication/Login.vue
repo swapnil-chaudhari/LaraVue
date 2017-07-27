@@ -43,16 +43,15 @@ export default {
         login (){
             var data = {
                 client_id     : '2',
-                client_secret : '8lWBYv7dvri9qo6s52UXX7UKzIpOze918MQOPPWX',
+                client_secret : 'jk9cjJ65Mdc4SQi7pHkZcrIczSL0vIqbOlnuFq7K',
                 grant_type : 'password',
                 username : this.email,
                 password : this.password
             }
             this.$http.post("oauth/token", data)
             .then(response => {
-              console.log(response);
-                // this.$auth.setToken(response.body.access_token,response.body.expires_in + Date.now())
-                // this.$router.push('/dashboard')
+                this.$auth.setToken(response.body.access_token,response.body.expires_in + Date.now())
+                this.$router.push('/dashboard')
             })
         }
     }

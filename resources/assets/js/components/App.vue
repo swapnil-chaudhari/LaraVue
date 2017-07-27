@@ -1,18 +1,12 @@
 <template>
-    <div >
-        <!-- <h1>Swapnil</h1> -->
-        <login></login>
-        <!-- <router-view></router-view> -->
+    <div id="app">
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import Login from './authentication/Login'
 export default {
-    name: 'app',
-    components: {
-        login: Login
-    },
+    name: 'app'
 }
 </script>
 
